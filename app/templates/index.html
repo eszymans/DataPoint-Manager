@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Database</h1>
+
+    <nav>
+        <a href="/add">Add new data</a>
+    </nav>
+    <hr>
+
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Lp (ID)</th>
+                <th>Weight (Float)</th>
+                <th>Height (Float)</th>
+                <th>Category (Int)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for point in data_points %}
+            <tr>
+                <td>{{ point.id }}</td>
+                <td>{{ point.weight }}</td>
+                <td>{{ point.height }}</td>
+                <td>{{ point.category }}</td>
+                <td>
+                    <form
+                            action="{{ url_for('main.delete_point',
+                            record_id=point.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

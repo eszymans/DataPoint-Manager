@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Data Point</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Add New Data Point</h1>
+    <a href="/">Back to Home Page</a>
+    <hr>
+
+    <form method="POST" action="/add">
+        <label>Weight (float):</label><br>
+        <input type="text" name="weight"><br><br>
+
+        <label>Height (float):</label><br>
+        <input type="text" name="height"><br><br>
+
+        <label>Category (integer):</label><br>
+        <input type="text" name="category"><br><br>
+
+        <button type="submit">Add to Database</button>
+    </form>
+</body>
+</html>
